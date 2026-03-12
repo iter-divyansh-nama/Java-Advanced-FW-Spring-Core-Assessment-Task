@@ -1,0 +1,18 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="student"
+		class="java_adv.spring_framework.Task_three.entity.Student">
+		<property name="courses">
+			<set />
+		</property>
+	</bean>
+
+	<bean id="course" class="java_adv.spring_framework.Task_three.entity.Course">
+		<property name="students">
+			<set />
+		</property>
+	</bean>
+
+</beans>
