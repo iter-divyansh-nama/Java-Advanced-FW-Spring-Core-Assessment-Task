@@ -1,0 +1,57 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	
+
+	<bean id="course1" class="java_adv.spring_framework.Task_one.entity.Course">
+		<property name="id" value="501" />
+		<property name="courseName" value="DataStructures" />
+		<property name="credits" value="4" />
+	</bean>
+
+	<bean id="course2" class="java_adv.spring_framework.Task_one.entity.Course">
+		<property name="id" value="502" />
+		<property name="courseName" value="DatabaseSystems" />
+		<property name="credits" value="3" />
+	</bean>
+
+
+
+	<bean id="department" class="java_adv.spring_framework.Task_one.entity.Department">
+		<property name="id" value="101" />
+		<property name="name" value="ComputerScience" />
+		<property name="courses">
+			<list>
+				<ref bean="course1" />
+				<ref bean="course2" />
+			</list>
+		</property>
+	</bean>
+
+
+	<bean id="profile" class="java_adv.spring_framework.Task_one.entity.StudentProfile">
+		<property name="id" value="301" />
+		<property name="email" value="arjun@gmail.com" />
+		<property name="phone" value="9876543210" />
+	</bean>
+
+
+
+
+	<bean id="student" class="java_adv.spring_framework.Task_one.entity.Student">
+		<property name="id" value="901" />
+		<property name="name" value="Arjun" />
+		<property name="profile" ref="profile" />
+		<property name="department" ref="department" />
+
+		<property name="courses">
+			<set>
+				<ref bean="course1" />
+				<ref bean="course2" />
+			</set>
+		</property>
+
+	</bean>
+
+</beans>
